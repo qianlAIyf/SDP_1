@@ -1,10 +1,15 @@
 package model;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Component
+@Scope("prototype")
 @Entity
 public class User {
     private int id;
