@@ -14,7 +14,7 @@
 <body>
 <div>
     <input type="button" value="注册" onclick="window.location.href='register.jsp'" style="float: right">
-    <input type="button" value="系统介绍" onclick="window.location.href='register.jsp'" style="float: right">
+    <input type="button" value="系统介绍" onclick="window.location.href='about.jsp'" style="float: right">
 </div>
 <center><h1>软件缺陷预测系统</h1></center>
     <s:form action="loginAction" method="POST">

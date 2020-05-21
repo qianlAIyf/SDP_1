@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import service.UserService;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -17,6 +18,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUser(String name) {
         return userDao.getUser(name);
+    }
+
+    @Override
+    public List<User> getUsers() {
+        return userDao.getUsers();
     }
 
     @Override
