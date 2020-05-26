@@ -1,10 +1,10 @@
 package service.impl;
 
-import dao.UserDao;
+import dao.interf.UserDao;
 import model.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import service.UserService;
+import service.interf.UserService;
 
 import javax.annotation.Resource;
 import java.util.List;

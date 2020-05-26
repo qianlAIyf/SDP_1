@@ -1,16 +1,22 @@
 package model;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Timestamp;
 
+@Component
+@Scope("singleton")
 @Entity
 public class Dataset {
     private int id;
     private String name;
     private byte dataType;
+    private Integer userId;
     private String path;
     private Timestamp loadTime;
 
@@ -45,6 +51,16 @@ public class Dataset {
     }
 
     @Basic
+    @Column(name = "user_id")
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    @Basic
     @Column(name = "path")
     public String getPath() {
         return path;
@@ -74,6 +90,7 @@ public class Dataset {
         if (id != dataset.id) return false;
         if (dataType != dataset.dataType) return false;
         if (name != null ? !name.equals(dataset.name) : dataset.name != null) return false;
+        if (userId != null ? !userId.equals(dataset.userId) : dataset.userId != null) return false;
         if (path != null ? !path.equals(dataset.path) : dataset.path != null) return false;
         if (loadTime != null ? !loadTime.equals(dataset.loadTime) : dataset.loadTime != null) return false;
 
@@ -85,6 +102,7 @@ public class Dataset {
         int result = id;
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (int) dataType;
+        result = 31 * result + (userId != null ? userId.hashCode() : 0);
         result = 31 * result + (path != null ? path.hashCode() : 0);
         result = 31 * result + (loadTime != null ? loadTime.hashCode() : 0);
         return result;

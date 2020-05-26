@@ -7,7 +7,7 @@
 <struts>
     <!-- 修改常量管理struts 中的action的工程，这个常量的使用，必须引入 spring和struts的整合包，不然spring无法管理struts2 Action 中的实体类-->
     <constant name="struts.objectFactory" value="spring" />
-    <constant name="struts.devMode" value="false" />
+    <constant name="struts.devMode" value="true" />
 
     <package name="user" extends="struts-default" namespace="/">
         <action name="user_registerUser" class="registerAction" method="execute">
@@ -15,6 +15,27 @@
         </action>
         <action name="loginAction" class="loginAction" method="execute">
             <result name="success">home.jsp</result>
+            <result name="input">index.jsp</result>
+        </action>
+        <action name="dataset_upload" class="DatasetUpload" method="execute">
+            <result name="success">userInfo_management.jsp</result>
+            <result name="error">userInfo_management.jsp</result>
+        </action>
+        <action name="getDataset_action" class="getDatasets" method="execute">
+            <result name="success">userInfo_management.jsp</result>
+            <result name="error">userInfo_management.jsp</result>
+        </action>
+        <action name="modelTrainAction" class="modelTrainAction" method="execute">
+            <result name="success">train_result.jsp</result>
+        </action>
+        <action name="getModel_action" class="getModels" method="execute">
+            <result name="success">defect_predict.jsp</result>
+        </action>
+        <action name="predict_Action" class="predictAction" method="execute">
+            <result name="success">defect_predict.jsp</result>
+        </action>
+        <action name="getReport_action" class="action.GetReportsAction" method="execute">
+            <result name="success">report_management.jsp</result>
         </action>
     </package>
 </struts>

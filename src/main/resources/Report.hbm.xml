@@ -7,8 +7,12 @@
     <class name="model.Report" table="report" schema="sdp">
         <id name="id" column="id"/>
         <property name="name" column="name"/>
+        <property name="userId" column="user_id"/>
+        <property name="modelId" column="model_id"/>
+        <property name="datasetId" column="dataset_id"/>
         <property name="path" column="path"/>
         <property name="madeTime" column="made_time"/>
         <property name="numberTrue" column="number_true"/>
+        <property name="numberFalse" column="number_false"/>
     </class>
 </hibernate-mapping>

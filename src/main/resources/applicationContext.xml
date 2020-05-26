@@ -65,7 +65,7 @@
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.format_sql">true</prop>
                 <!-- 解决session关闭问题 -->
-                <prop key="hibernate.enable_lazy_load_no_trans">true</prop>
+                <prop key="hibernate.enable_lazy_load_no_trans">false</prop>
                 <!-- spring 和 hibernate 整合的时候默认就是使用线程的，下面这一行不用写，写了反而要报错，此外 sessionFaction，不能使用openSession
                  既不能保存数据到数据库，还不能实现事务功能
                  -->

@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%@ taglib uri="/struts-tags" prefix="s" %>
-<%@page import="action.RegisterAction" %>
+
 <html>
 <head>
     <title>register</title>

@@ -6,10 +6,9 @@ import model.User;
 import org.apache.struts2.dispatcher.HttpParameters;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
-import service.UserService;
+import service.interf.UserService;
 
 import javax.annotation.Resource;
-import java.util.Map;
 
 @Controller("registerAction")
 @Scope("prototype")

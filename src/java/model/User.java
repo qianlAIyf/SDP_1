@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Component
-@Scope("prototype")
+@Scope("singleton")
 @Entity
 public class User {
     private int id;

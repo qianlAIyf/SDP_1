@@ -1,5 +1,6 @@
-package dao;
+package dao.impl;
 
+import dao.interf.UserDao;
 import model.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,7 +12,7 @@ import javax.persistence.Query;
 import java.util.List;
 
 @Repository
-public class UserDaoImpl implements UserDao{
+public class UserDaoImpl implements UserDao {
     @Resource(name = "sessionFactory")
     private SessionFactory sessionFactory;
 

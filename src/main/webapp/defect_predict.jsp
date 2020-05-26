@@ -44,28 +44,30 @@
 
 <div style="width:500px">
     <input type="button" class="button" onClick="window.location.href='userInfo_management.jsp'" value="用户信息管理">
-    <input type="button" class="button" onClick="window.location.href='home.jsp'" value="模型训练">
-    <%--<input type="button" class="button" onClick="window.location.href='get_models.jsp'" value="缺陷预测">--%>
-    <form action="getModel_action" method="post"> <input type="submit" class="button" value="缺陷预测"></form>
+    <input type="button" class="button" onClick="window.location.href='userInfo_management.jsp'" value="模型训练">
+    <input type="button" class="button" onClick="window.location.href='userInfo_management.jsp'" value="缺陷预测">
 </div>
 
 <div style="width: 1000px; height:600px;border:#3FF solid 1px; ">
-    <p style="color: blue;">欢迎使用软件缺陷预测系统，基本原理如下！</p>
-    <s:form action="modelTrainAction" method="POST" enctype="multipart/form-data">
+    <p style="color: blue;">欢迎使用软件缺陷预测系统，下面是缺陷预测的执行步骤，请按照顺序依次执行！</p>
+    <s:form action="predict_Action" method="POST" enctype="multipart/form-data">
         <div>
             <label style="font-size: 30px;">选择数据集</label><br>
             <input type="file" name="dataset"><br>
         </div>
-        <hr>
         <div>
-            <label style="font-size: 30px;">选择算法</label><br>
-<%--            <s:radio list="{'LLE-SVM','IGA-SVM','JCUDA-BP'}" name="method"></s:radio>--%>
-            <label><input type="radio" name="method" value="LLE-SVM">LLE-SVM</label>
-            <label><input type="radio" name="method" value="IGA-SVM">IGA-SVM</label>
-            <label><input type="radio" name="method" value="JCUDA-BP">JCUDA-BP</label>
+            <label style="font-size: 30px;">选择模型</label><br>
+                <%--            <s:radio list="{'LLE-SVM','IGA-SVM','JCUDA-BP'}" name="method"></s:radio>--%>
+            <div style="overflow-x: auto;overflow-y: auto;border: 1px solid silver; width: 950px; height: 400px">
+                <s:iterator value="models" status="li">
+                    <label><input type="radio" name="model_id" value="<s:property value="id"/>"></label>&nbsp;
+                    <label><s:property value="name"></s:property> </label>&nbsp;
+                    <label><s:property value="madeTime"></s:property> </label>&nbsp;
+                    <label><s:property value="accuracy"></s:property> </label><br>
+                </s:iterator>
+            </div>
         </div>
-        <hr>
-        <input type="submit" value="开始训练">
+        <input type="submit" value="开始预测">
     </s:form>
 </div>
 

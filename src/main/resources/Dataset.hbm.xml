@@ -8,6 +8,7 @@
         <id name="id" column="id"/>
         <property name="name" column="name"/>
         <property name="dataType" column="data_type"/>
+        <property name="userId" column="user_id"/>
         <property name="path" column="path"/>
         <property name="loadTime" column="load_time"/>
     </class>
